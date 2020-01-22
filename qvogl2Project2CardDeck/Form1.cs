@@ -38,11 +38,27 @@ namespace qvogl2Project2CardDeck
             SoundPlayer shuffleSound = new SoundPlayer(Properties.Resources.shuffle);
             shuffleSound.Play();
 
+            //Console.WriteLine(Controls.Count.ToString());
+            int count = 0;
+
+            List<Control> removal = new List<Control>();
             foreach (Control child in Controls)
             {
-                if (child is PictureBox && child.Name.Contains("Card"))
-                    ((PictureBox)child).Dispose();               
+                //Console.WriteLine(child.Name);
+                count++;
+
+                if (child is PictureBox && !child.Name.Equals("cardPictureBox"))
+                    removal.Add(child);
+
             }
+
+            foreach(Control child in removal)
+            {
+                child.Dispose();
+            }
+            //Console.WriteLine(count + " " + Controls.Count.ToString());
+
+
             List<String> drawnCards = new List<String>();
 
             int numOfCards = 0;
