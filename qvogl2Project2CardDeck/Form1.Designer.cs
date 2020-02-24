@@ -69,6 +69,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cardPictureBox);
             this.Controls.Add(this.drawAmount);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Card Deck";
             ((System.ComponentModel.ISupportInitialize)(this.cardPictureBox)).EndInit();
